@@ -1,18 +1,37 @@
-<div class="dropdown-menu">
-  <div class="header-box .sub" ng-if="basket.length == 0">
+<div id="app-header">
+
+<!-- Basket contents div -->
+<div id="basket-contents">
+    Your Order <br>
+    A Delicious Restaurant <br>
+
+    {{basket.length}} main <br>
+
+    <ul>
+      <li ng-repeat="item in basket">
+	{{item.name}} - {{item.quantity}} <span ng-click="add_to_basket(item.id)">[+]</span> <span ng-click="remove_from_basket(item.id)">[-]</span>
+      </li>
+    </ul>
+</div>
+
+
+<div id="dropdown-menu">
+  <!-- Normal div display thingy -->
+  <div id="order-some-food-box" class="dropdown-button sub" ng-if="basket.length == 0">
     It's time to order some delicious food
   </div>
 
   <div ng-if="basket.length > 0">
-
-    <div class="total-basket-mains .sub" >
+    <div id="total-basket-mains" class="dropdown-button sub" >
       {{ basket.length }} mains
     </div>
 
-    <div class="total-basket-price .sub" >
+    <div id="total-basket-price" class="dropdown-button sub" ng-click="toggle_basket_display()">
       {{total_price | currency: "£"}}
     </div>
   </div>
+</div>
+
 </div>
 
 <div id="basket-spacer"></div>

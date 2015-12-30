@@ -47,24 +47,26 @@ h4{
 
 }
 
-
-.dropdown-menu{
+#app-header{
     position: fixed;
+    z-index: 1;
+    background-color: $header-bg-color;
+}
 
+#basket-contents{
+    width: 278px;
+    color: white;
+}
+
+#dropdown-menu{
     height: 34px;
     width: 278px;
 
     padding: 10px 21px 10px;
-
-    z-index: 1;
-
-    background-color: $header-bg-color;
 }
 
 
-.header-box,
-.total-basket-mains,
-.total-basket-price{
+.dropdown-button{
     display: inline;
 
     height: 20px;
@@ -76,17 +78,18 @@ h4{
     border-radius: 2px;
 }
 
-.header-box{
+#order-some-food-box{
+    float:left;
+
     width: 276px;
 
     color: white;
 
     text-align: center;
-    position: absolute;
 }
 
 
-.total-basket-mains{
+#total-basket-mains{
     float:left;
 
     width: 59px;
@@ -99,7 +102,7 @@ h4{
 }
 
 
-.total-basket-price{
+#total-basket-price{
     float: right;
 
     width: 56px;
@@ -108,6 +111,8 @@ h4{
     font-size: 12px;
 
     text-align: center;
+
+    cursor: pointer;
 }
 
 
