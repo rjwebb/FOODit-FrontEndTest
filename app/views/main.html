@@ -1,8 +1,21 @@
 <div class="dropdown-menu">
-  <div class="header-box .sub">
+  <div class="header-box .sub" ng-if="basket.length == 0">
     It's time to order some delicious food
   </div>
+
+  <div ng-if="basket.length > 0">
+
+    <div class="total-basket-mains .sub" >
+      {{ basket.length }} mains
+    </div>
+
+    <div class="total-basket-price .sub" >
+      {{total_price | currency: "£"}}
+    </div>
+  </div>
 </div>
+
+<div id="basket-spacer"></div>
 
 <h4 id="restaurant-name">Your Delicious Restaurant</h4>
 
@@ -27,9 +40,11 @@
     <div class="description-box">
       <p class="description">{{meal.description}}</p>
 
-      <div class="add-to-order">
-	Add To Your Order
-      </div>
+      <a href="" ng-click="add_to_basket(meal.id)">
+	<div class="add-to-order">
+	  Add To Your Order
+	</div>
+      </a>
 
       <span class="options-available">
 	3 options available
