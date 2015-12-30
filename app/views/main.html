@@ -27,7 +27,7 @@
       <img class="image" ng-src="{{meal.primaryImageUrl}}">
 
       <div class="name-thing">
-        <h4 class="name">{{meal.name}}</h4>
+	<h4 class="name">{{meal.name}}</h4>
       </div>
 
     <ul class="tags">
@@ -40,11 +40,9 @@
     <div class="description-box">
       <p class="description">{{meal.description}}</p>
 
-      <a href="" ng-click="add_to_basket(meal.id)">
-	<div class="add-to-order">
-	  Add To Your Order
-	</div>
-      </a>
+      <div class="add-to-order" ng-click="add_to_basket(meal.id)">
+	Add To Your Order
+      </div>
 
       <span class="options-available">
 	3 options available

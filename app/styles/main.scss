@@ -7,6 +7,8 @@ $header-bg-color: #c83c3c;
 $header-box-bg-color: #d75050;
 $header-box-border-color: #c2182d;
 
+$dropdown-mains-color: #9b0014;
+
 $meal-border-color: #e8e8e8;
 
 $price-bg-color: #446bf1;
@@ -26,15 +28,15 @@ body {
     margin: 0;
 }
 
+
 h4{
     margin: 0px;
 }
 
 #restaurant-name{
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding:20px 20px 0px;
 }
+
 
 .container{
     position: relative;
@@ -49,8 +51,10 @@ h4{
 .dropdown-menu{
     position: fixed;
 
-    height: 54px;
-    width:320px;
+    height: 34px;
+    width: 278px;
+
+    padding: 10px 21px 10px;
 
     z-index: 1;
 
@@ -61,7 +65,7 @@ h4{
 .header-box,
 .total-basket-mains,
 .total-basket-price{
-    position: absolute;
+    display: inline;
 
     height: 20px;
 
@@ -73,37 +77,39 @@ h4{
 }
 
 .header-box{
-    left: 21px;
-    top: 12px;
+    width: 276px;
 
-    width: 278px;
-
-    color: #fff;
+    color: white;
 
     text-align: center;
+    position: absolute;
 }
 
+
 .total-basket-mains{
-    left: 21px;
-    top: 12px;
+    float:left;
 
     width: 59px;
 
-    color: #fff;
+    color: $dropdown-mains-color;
+    font-size: 12px;
+    font-style: italic;
 
     text-align: center;
 }
 
+
 .total-basket-price{
-    right: 21px;
-    top: 12px;
+    float: right;
 
     width: 56px;
 
-    color: #fff;
+    color: white;
+    font-size: 12px;
 
     text-align: center;
 }
+
 
 #basket-spacer{
     height: 54px;
@@ -120,21 +126,21 @@ h4{
 .meal {
     position: relative;
 
-    margin-bottom: 22px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 20px 22px;
 
     padding-bottom: 4px;
 
     border: 1px solid $meal-border-color;
     border-radius: 2px;
 
-    background-color: #fff;
+    background-color: white;
 }
+
 
 .img-box{
     position:relative;
 }
+
 
 .image{
     height: 210px;
@@ -148,16 +154,14 @@ h4{
 }
 .price {
     position: absolute;
-    top: 0px;
+
     left: 0px;
     right: 0px;
 
     width: 67px;
     height: 23px;
 
-    margin-top: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0px auto;
 
     padding-top: 5px;
 
@@ -169,6 +173,7 @@ h4{
     font-style: italic;
     text-align: center;
 }
+
 
 .name-thing::before,
 .name-thing::after{
@@ -193,30 +198,32 @@ h4{
     position:absolute;
     bottom:0px;
     width:278px;
+
+    text-align: center;
 }
 
 
-
 .name{
-    text-align: center;
+
     background-color:$meal-name-bg-color;
 
     margin-top:-4px;
     margin-bottom:-7px;
+
     padding-bottom:21px;
 }
 
 
 .description-box{
-    margin-top: 0px;
-    margin-left: 22px;
-    margin-right: 22px;
+    margin: 0px 22px 0px;
 }
+
 
 .description{
     margin-top: 0px;
     margin-bottom: 6px;
 }
+
 
 .add-to-order{
     width: 239px;
@@ -226,7 +233,7 @@ h4{
 
     margin: auto;
 
-    color: #fff;
+    color: white;
 
     background-color:$add-to-order-bg-color;
     border: 1px solid $add-to-order-border-color;
@@ -234,7 +241,10 @@ h4{
 
     text-align: center;
     font-style: italic;
+
+    cursor: pointer;
 }
+
 
 .options-available{
     font-size: 10px;
@@ -254,7 +264,8 @@ h4{
     padding:0px;
     text-align:center;
 
-    li {
-	display:inline;
-    }
+}
+
+.tags li {
+    display:inline;
 }
