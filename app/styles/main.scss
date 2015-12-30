@@ -1,2 +1,212 @@
 @import 'scales';
 @import 'typography';
+
+$bg-color: #f7f7f7;
+
+$header-bg-color: #c83c3c;
+$header-box-bg-color: #d75050;
+$header-box-border-color: #c2182d;
+
+$meal-border-color: #e8e8e8;
+
+$price-bg-color: #446bf1;
+$price-color: #fff;
+
+$meal-name-bg-color: rgba(230,230,230,0.9);
+
+$text-color: #777777;
+
+$add-to-order-bg-color: #446bf1;
+$add-to-order-border-color: #6081f3;
+
+$options-available-color: #c2c2c2;
+
+body {
+    font-family: $type__family--base;
+    margin: 0;
+}
+
+h4{
+    margin: 0px;
+}
+
+#restaurant-name{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container{
+    position: relative;
+    width: 320px;
+
+    background-color: $bg-color;
+    color: $text-color;
+
+}
+
+
+.dropdown-menu{
+    position: relative;
+    height: 54px;
+    background-color: $header-bg-color;
+}
+
+.header-box{
+    position: absolute;
+
+    left: 21px;
+    top: 12px;
+
+    width: 278px;
+    height: 20px;
+
+    padding-top: 8px;
+
+    color: #fff;
+
+    background-color: $header-box-bg-color;
+    border: 1px solid $header-box-border-color;
+    border-radius: 2px;
+
+    text-align: center;
+}
+
+
+.meals {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px 0px 0px 0px;
+}
+
+
+.meal {
+    position: relative;
+
+    margin-bottom: 22px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    padding-bottom: 4px;
+
+    border: 1px solid $meal-border-color;
+    border-radius: 2px;
+
+    background-color: #fff;
+}
+
+.img-box{
+    position:relative;
+}
+
+.image{
+    height: 210px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.price::before {
+    content: "£";
+}
+.price {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    width: 67px;
+    height: 28px;
+
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-top: 6px;
+
+    border-radius: 0 0 1px 1px;
+
+    background-color: $price-bg-color;
+    color: $price-color;
+
+    font-style: italic;
+    text-align: center;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+.name-thing::before{
+    position: relative;
+    left: -4px;
+
+            clip-path: inset(0px 2px 0px 4px);
+    -webkit-clip-path: inset(0px 2px 0px 4px);
+
+    content: url("../images/meal-card__curve_grey.svg");
+
+    opacity:0.9;
+}
+
+
+.name-thing{
+    position:absolute;
+    bottom:0px;
+    width:278px;
+}
+
+
+.name-thing::after{
+    position: relative;
+    left: -4px;
+
+            clip-path: inset(0px 2px 0px 4px);
+    -webkit-clip-path: inset(0px 2px 0px 4px);
+
+    content: url("../images/meal-card__curve.svg");
+}
+
+.name{
+    text-align: center;
+    background-color:$meal-name-bg-color;
+
+    margin-top:-4px;
+    margin-bottom:-7px;
+    padding-bottom:21px;
+}
+
+
+.description-box{
+    margin-top: 0px;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+
+.description{
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.add-to-order{
+    width: 239px;
+    height: 21px;
+
+    padding-top: 8px;
+
+    margin: auto;
+
+    color: #fff;
+
+    background-color:$add-to-order-bg-color;
+    border: 1px solid $add-to-order-border-color;
+
+    text-align: center;
+    font-style: italic;
+}
+
+.options-available{
+    font-size: 10px;
+    color: $options-available-color;
+}

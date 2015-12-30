@@ -1,8 +1,33 @@
+<div class="dropdown-menu">
+  <div class="header-box .sub">
+    It's time to order some delicious food
+  </div>
+</div>
+
+<h4 id="restaurant-name">Your Delicious Restaurant</h4>
+
 <ul class="meals">
-    <li class="meal" ng-repeat="meal in menu.meals">
+  <li class="meal" ng-repeat="meal in menu.meals">
+
+    <div class="img-box">
+      <p class="price">{{meal.price}}</p>
+      <img class="image" ng-src="{{meal.primaryImageUrl}}">
+
+      <div class="name-thing">
         <h4 class="name">{{meal.name}}</h4>
-        <img class="image" ng-src="{{meal.primaryImageUrl}}">
-        <p class="description">{{meal.description}}</p>
-        <p class="price">{{meal.price}}</p>
-    </li>
+      </div>
+    </div>
+
+    <div class="description-box">
+      <p class="description">{{meal.description}}</p>
+
+      <div class="add-to-order">
+	Add To Your Order
+      </div>
+
+      <span class="options-available">
+	3 options available
+      </span>
+    </div>
+  </li>
 </ul>
