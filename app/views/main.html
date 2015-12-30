@@ -16,6 +16,12 @@
       <div class="name-thing">
         <h4 class="name">{{meal.name}}</h4>
       </div>
+
+    <ul class="tags">
+      <li ng-repeat="tag in meal.tags | is_tag">
+	<img ng-src="images/tag--{{tag}}.svg">
+      </li>
+    </ul>
     </div>
 
     <div class="description-box">
