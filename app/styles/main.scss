@@ -133,17 +133,23 @@ h4{
     text-align: center;
 }
 
-
-.name-thing::before{
+.name-thing::before,
+.name-thing::after{
     position: relative;
     left: -4px;
 
             clip-path: inset(0px 2px 0px 4px);
     -webkit-clip-path: inset(0px 2px 0px 4px);
 
+}
+.name-thing::before{
     content: url("../images/meal-card__curve_grey.svg");
 
     opacity:0.9;
+}
+
+.name-thing::after{
+    content: url("../images/meal-card__curve.svg");
 }
 
 
@@ -154,15 +160,6 @@ h4{
 }
 
 
-.name-thing::after{
-    position: relative;
-    left: -4px;
-
-            clip-path: inset(0px 2px 0px 4px);
-    -webkit-clip-path: inset(0px 2px 0px 4px);
-
-    content: url("../images/meal-card__curve.svg");
-}
 
 .name{
     text-align: center;
