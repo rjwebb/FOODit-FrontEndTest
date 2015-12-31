@@ -7,6 +7,10 @@ $header-bg-color: #c83c3c;
 $header-box-bg-color: #d75050;
 $header-box-border-color: #c2182d;
 
+$item-basket-left-bg-color: #c83c3c;
+
+$item-quantity-button-color: #a61a2a;
+
 $dropdown-mains-color: #9b0014;
 
 $meal-border-color: #e8e8e8;
@@ -53,9 +57,79 @@ h4{
     background-color: $header-bg-color;
 }
 
-#basket-contents{
+#dropdown-basket{
     width: 278px;
     color: white;
+    padding: 20px;
+    border-bottom:1px solid $header-box-bg-color;
+}
+
+#basket-title{
+    font-size:20px;
+    font-weight:bold;
+}
+
+#basket-subtitle{
+    font-size:13px;
+    font-style: italic;
+}
+
+#basket-num-items{
+    margin-top:20px;
+    color: $dropdown-mains-color;
+    font-size: 11px;
+    font-style: italic;
+}
+
+ul#basket{
+    list-style-type: none;
+    margin:0px;
+    padding:0px;
+    border:1px solid $header-box-border-color;
+    border-radius:3px;
+    width:100%;
+}
+
+.item-basket-item{
+    position:relative;
+
+    border-bottom:1px solid $header-box-border-color;
+
+    width:100%;
+    background-color: $header-box-bg-color;
+
+    display:flex;
+    align-items:stretch;
+
+}
+
+li.item-basket-item:last-child{
+    border:none;
+}
+
+.item-basket-left{
+    width: 19px;
+    background-color: $item-basket-left-bg-color;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    text-align:center;
+    font-size:12px;
+}
+
+.item-quantity-button{
+    color:$item-quantity-button-color;
+}
+
+.item-basket-right{
+    width: 254px;
+    vertical-align:top;
+    padding:13px;
+
+    display:flex;
+    justify-content:space-between;
 }
 
 #dropdown-menu{
@@ -101,6 +175,27 @@ h4{
     text-align: center;
 }
 
+#confirm-order-button{
+    float:left;
+
+    display:inline;
+
+    width:203px;
+    height:20px;
+
+    padding-top: 8px;
+
+    border:1px solid white;
+    border-radius:1px;
+
+    background-color:white;
+
+    color: $header-box-bg-color;
+    font-size: 12px;
+    font-style: italic;
+
+    text-align: center;
+}
 
 #total-basket-price{
     float: right;

@@ -34,18 +34,21 @@ angular.module('jstestApp')
 	$scope.add_to_basket = function(item_id){
 	    // try to find the item in the basket
 	    var i = find_by_id($scope.basket, item_id);
-	    console.log(i);
 
 	    // if it is in the basket
 	    if(typeof i != "undefined"){
 		// then just increment the counter
 		$scope.basket[i].quantity += 1;
+
+		$scope.total_price += parseFloat($scope.basket[i].price);
 	    }else{
 		// otherwise add it to the basket
 		var meals = $scope.menu.meals;
 		var item = meals[ find_by_id(meals, item_id) ];
 		var l = $scope.basket.push( item );
 		$scope.basket[l - 1].quantity = 1;
+
+		$scope.total_price += parseFloat(item.price);
 	    }
 	};
 
@@ -55,6 +58,8 @@ angular.module('jstestApp')
 
 	    // if it is in the basket
 	    if(typeof i != "undefined"){
+		var price = $scope.basket[i].price
+
 		if($scope.basket[i].quantity == 1){
 		    // remove the thing from the basket altogether
 		    $scope.basket.splice(i, 1);
@@ -62,12 +67,21 @@ angular.module('jstestApp')
 		    // just decrement the counter
 		    $scope.basket[i].quantity -= 1;
 		}
+
+		$scope.total_price -= price;
+
+		if($scope.basket.length == 0){
+		    $scope.hide_basket = true;
+		}
+	    }else{
+		console.log("not found: "+item_id);
 	    }
 	    // if it is not in the basket, do nothing as this operation is redundant
 	}
 
-	$scope.toggle_basket_display = function(){
-	    console.log("this is gonna do something cool soon!");
+	$scope.hide_basket = true;
+	$scope.toggle_hide_basket = function(){
+	    $scope.hide_basket = $scope.hide_basket === false ? true: false;
 	}
     }
 ]);
