@@ -27,6 +27,7 @@ $add-to-order-border-color: #6081f3;
 
 $options-available-color: #c2c2c2;
 
+
 body {
     font-family: $type__family--base;
     margin: 0;
@@ -326,7 +327,6 @@ li.item-basket-item:last-child{
 
 
 .add-to-order{
-    width: 239px;
     height: 21px;
 
     padding-top: 8px;
