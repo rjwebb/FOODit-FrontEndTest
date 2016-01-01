@@ -1,7 +1,7 @@
 <div id="app-header">
 
 <!-- Basket contents div -->
-<div id="dropdown-basket" ng-hide="hide_basket">
+<div id="dropdown-basket" ng-hide="hideBasket">
     <div id="basket-title">Your Order</div>
     <div id="basket-subtitle">A Delicious Restaurant</div>
 
@@ -10,9 +10,9 @@
     <ul id="basket">
       <li class="item-basket-item" ng-repeat="item in basket">
 	<div class="item-basket-left">
-	  <div class="item-quantity-button" ng-click="add_to_basket(item.id)">+</div>
+	  <div class="item-quantity-button" ng-click="addToBasket(item.id)">+</div>
 	  <div class="item-basket-quantity">{{item.quantity}}</div>
-	  <div class="item-quantity-button" ng-click="remove_from_basket(item.id)">-</div>
+	  <div class="item-quantity-button" ng-click="removeFromBasket(item.id)">-</div>
 	</div>
 	<div class="item-basket-right">
 	  <div class="item-basket-name">{{item.name}}</div>
@@ -30,16 +30,16 @@
   </div>
 
   <div ng-if="basket.length > 0">
-    <div id="total-basket-mains" class="dropdown-button sub" ng-hide="!hide_basket" >
+    <div id="total-basket-mains" class="dropdown-button sub" ng-hide="!hideBasket" >
       {{ basket.length }} mains
     </div>
 
-    <div id="confirm-order-button" ng-hide="hide_basket">
+    <div id="confirm-order-button" ng-hide="hideBasket">
       Confirm Your Order
     </div>
 
-    <div id="total-basket-price" class="dropdown-button sub" ng-click="toggle_hide_basket()">
-      {{total_price | currency: "£"}}
+    <div id="total-basket-price" class="dropdown-button sub" ng-click="toggleHideBasket()">
+      {{totalPrice | currency: "£"}}
     </div>
   </div>
 </div>
@@ -71,7 +71,7 @@
     <div class="description-box">
       <p class="description">{{meal.description}}</p>
 
-      <div class="add-to-order" ng-click="add_to_basket(meal.id)">
+      <div class="add-to-order" ng-click="addToBasket(meal.id)">
 	Add To Your Order
       </div>
 
